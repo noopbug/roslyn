@@ -1910,7 +1910,7 @@ class Hello
 
             Assert.True(WaitForProcessExitAsync(_compilerServerExecutable).Wait(timeout),
                 string.Format("Compiler server did not exit after {0} seconds, number of vbcscompiler.exe proccesses found: {1}",
-                    timeout.Milliseconds / 1000,
+                    timeout.TotalSeconds,
                     GetProcessesByFullPath(_compilerServerExecutable).Count));
 
             // Run another build using the analyzer
